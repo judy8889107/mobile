@@ -9,7 +9,7 @@ namespace Bit.App.Pages
         {
             PageTitle = AppResources.Bitwarden;
         }
-        
+
         public Action StartLoginAction { get; set; }
         public Action StartRegisterAction { get; set; }
         public Action StartSsoLoginAction { get; set; }

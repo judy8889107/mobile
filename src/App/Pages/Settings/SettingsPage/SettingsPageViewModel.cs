@@ -1,14 +1,14 @@
-﻿using Bit.App.Abstractions;
-using Bit.App.Resources;
-using Bit.Core;
-using Bit.Core.Abstractions;
-using Bit.Core.Utilities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Bit.App.Abstractions;
+using Bit.App.Resources;
+using Bit.Core;
+using Bit.Core.Abstractions;
 using Bit.Core.Enums;
 using Bit.Core.Models.Domain;
+using Bit.Core.Utilities;
 using Xamarin.Forms;
 using ZXing.Client.Result;
 
@@ -430,7 +430,7 @@ namespace Bit.App.Pages
             var securityItems = new List<SettingsPageListItem>
             {
                 new SettingsPageListItem { Name = AppResources.VaultTimeout, SubLabel = _vaultTimeoutDisplayValue },
-                new SettingsPageListItem 
+                new SettingsPageListItem
                 {
                     Name = AppResources.VaultTimeoutAction,
                     SubLabel = _vaultTimeoutActionDisplayValue

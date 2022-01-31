@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Bit.Core.Models.View;
 using Xamarin.Forms;
 
@@ -11,7 +11,7 @@ namespace Bit.App.Controls
 
         public static readonly BindableProperty ButtonCommandProperty = BindableProperty.Create(
             nameof(ButtonCommand), typeof(Command<SendView>), typeof(SendViewCell));
-        
+
         public static readonly BindableProperty ShowOptionsProperty = BindableProperty.Create(
             nameof(ShowOptions), typeof(bool), typeof(SendViewCell), true, BindingMode.OneWay);
 

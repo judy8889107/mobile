@@ -1,8 +1,8 @@
-﻿using Bit.Core.Abstractions;
+﻿using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using Bit.Core.Abstractions;
 using Bit.Core.Models.Data;
 using Bit.Core.Models.Domain;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace Bit.Core.Services
 {

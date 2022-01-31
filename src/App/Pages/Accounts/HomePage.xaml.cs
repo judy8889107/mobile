@@ -1,9 +1,9 @@
-﻿using Bit.App.Models;
+﻿using System;
+using System.Threading.Tasks;
+using Bit.App.Models;
 using Bit.App.Utilities;
 using Bit.Core.Abstractions;
 using Bit.Core.Utilities;
-using System;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace Bit.App.Pages
@@ -63,7 +63,7 @@ namespace Bit.App.Pages
         {
             _logo.Source = !ThemeManager.UsingLightTheme ? "logo_white.png" : "logo.png";
         }
-        
+
         private void Close_Clicked(object sender, EventArgs e)
         {
             if (DoOnce())
@@ -93,7 +93,7 @@ namespace Bit.App.Pages
                 _vm.StartRegisterAction();
             }
         }
-        
+
         private async Task StartRegisterAsync()
         {
             var page = new RegisterPage(this);
@@ -121,7 +121,7 @@ namespace Bit.App.Pages
                 _vm.StartEnvironmentAction();
             }
         }
-        
+
         private async Task StartEnvironmentAsync()
         {
             var page = new EnvironmentPage();

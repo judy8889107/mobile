@@ -1,4 +1,6 @@
-﻿using Bit.App.Abstractions;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using Bit.App.Abstractions;
 using Bit.App.Models;
 using Bit.App.Resources;
 using Bit.App.Utilities;
@@ -6,8 +8,6 @@ using Bit.Core;
 using Bit.Core.Abstractions;
 using Bit.Core.Enums;
 using Bit.Core.Utilities;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration;

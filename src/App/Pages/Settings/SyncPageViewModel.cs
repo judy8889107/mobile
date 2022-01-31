@@ -1,10 +1,10 @@
-﻿using Bit.App.Abstractions;
+﻿using System.Threading.Tasks;
+using Bit.App.Abstractions;
 using Bit.App.Resources;
 using Bit.Core;
 using Bit.Core.Abstractions;
 using Bit.Core.Exceptions;
 using Bit.Core.Utilities;
-using System.Threading.Tasks;
 
 namespace Bit.App.Pages
 {

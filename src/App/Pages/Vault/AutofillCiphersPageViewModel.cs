@@ -1,4 +1,9 @@
-﻿using Bit.App.Abstractions;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using Bit.App.Abstractions;
 using Bit.App.Models;
 using Bit.App.Resources;
 using Bit.App.Utilities;
@@ -8,11 +13,6 @@ using Bit.Core.Enums;
 using Bit.Core.Exceptions;
 using Bit.Core.Models.View;
 using Bit.Core.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace Bit.App.Pages

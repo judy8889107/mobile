@@ -1,4 +1,8 @@
-﻿using Bit.App.Abstractions;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Bit.App.Abstractions;
 using Bit.App.Resources;
 using Bit.App.Utilities;
 using Bit.Core;
@@ -7,10 +11,6 @@ using Bit.Core.Enums;
 using Bit.Core.Models.Domain;
 using Bit.Core.Models.View;
 using Bit.Core.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace Bit.App.Pages
@@ -271,7 +271,7 @@ namespace Bit.App.Pages
                     {
                         new GroupingsPageListItem()
                         {
-                            IsTrash = true, 
+                            IsTrash = true,
                             ItemCount = _deletedCount.ToString("N0")
                         }
                     }, AppResources.Trash, _deletedCount, uppercaseGroupNames, false));

@@ -1,10 +1,10 @@
-﻿using Bit.Core;
-using Bit.Core.Abstractions;
-using Bit.Core.Utilities;
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using Bit.App.Abstractions;
 using Bit.App.Utilities;
+using Bit.Core;
+using Bit.Core.Abstractions;
+using Bit.Core.Utilities;
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;

@@ -13,7 +13,7 @@ namespace Bit.App.Pages
         private readonly IDeviceActionService _deviceActionService;
         private readonly IStorageService _storageService;
         private readonly MobileI18nService _i18nService;
-        
+
         private bool _autofillServiceToggled;
         private bool _inlineAutofillToggled;
         private bool _accessibilityToggled;
@@ -27,9 +27,9 @@ namespace Bit.App.Pages
             _i18nService = ServiceContainer.Resolve<II18nService>("i18nService") as MobileI18nService;
             PageTitle = AppResources.AutofillServices;
         }
-        
+
         #region Autofill Service
-        
+
         public bool AutofillServiceVisible
         {
             get => _deviceActionService.SystemMajorVersion() >= 26;
@@ -44,16 +44,16 @@ namespace Bit.App.Pages
                     nameof(InlineAutofillEnabled)
                 });
         }
-        
+
         #endregion
-        
+
         #region Inline Autofill
 
         public bool InlineAutofillVisible
         {
             get => _deviceActionService.SystemMajorVersion() >= 30;
         }
-        
+
         public bool InlineAutofillEnabled
         {
             get => AutofillServiceToggled;
@@ -70,9 +70,9 @@ namespace Bit.App.Pages
                 }
             }
         }
-        
+
         #endregion
-        
+
         #region Accessibility
 
         public string AccessibilityDescriptionLabel
@@ -98,7 +98,7 @@ namespace Bit.App.Pages
                 return _i18nService.T("AccessibilityDescription4");
             }
         }
-        
+
         public bool AccessibilityToggled
         {
             get => _accessibilityToggled;
@@ -110,9 +110,9 @@ namespace Bit.App.Pages
         }
 
         #endregion
-        
+
         #region Draw-Over
-        
+
         public bool DrawOverVisible
         {
             get => _deviceActionService.SystemMajorVersion() >= 23;
@@ -136,12 +136,12 @@ namespace Bit.App.Pages
                 return _i18nService.T("DrawOverDescription3");
             }
         }
-        
+
         public bool DrawOverEnabled
         {
             get => AccessibilityToggled;
         }
-        
+
         public bool DrawOverToggled
         {
             get => _drawOverToggled;
@@ -149,7 +149,7 @@ namespace Bit.App.Pages
         }
 
         #endregion
-        
+
         public async Task InitAsync()
         {
             InlineAutofillToggled = await _storageService.GetAsync<bool?>(Constants.InlineAutofillEnabledKey) ?? true;
@@ -190,14 +190,14 @@ namespace Bit.App.Pages
             }
             _deviceActionService.OpenAccessibilityOverlayPermissionSettings();
         }
-        
+
         public void UpdateEnabled()
         {
             AutofillServiceToggled = _deviceActionService.AutofillServiceEnabled();
             AccessibilityToggled = _deviceActionService.AutofillAccessibilityServiceRunning();
             DrawOverToggled = _deviceActionService.AutofillAccessibilityOverlayPermitted();
         }
-        
+
         private async Task UpdateInlineAutofillToggledAsync()
         {
             if (_inited)

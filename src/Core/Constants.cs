@@ -47,12 +47,12 @@
         public const int SelectFileRequestCode = 42;
         public const int SelectFilePermissionRequestCode = 43;
         public const int SaveFileRequestCode = 44;
-        
+
         public static readonly string[] AndroidAllClearCipherCacheKeys =
         {
             ClearCiphersCacheKey
         };
-        
+
         public static readonly string[] iOSAllClearCipherCacheKeys =
         {
             ClearCiphersCacheKey,

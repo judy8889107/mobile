@@ -1,14 +1,14 @@
-﻿using Bit.App.Abstractions;
+﻿using System;
+using System.Linq;
+using System.Threading.Tasks;
+using Bit.App.Abstractions;
+using Bit.App.Controls;
 using Bit.App.Models;
 using Bit.App.Resources;
 using Bit.Core;
 using Bit.Core.Abstractions;
 using Bit.Core.Enums;
 using Bit.Core.Utilities;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
-using Bit.App.Controls;
 using Xamarin.Forms;
 
 namespace Bit.App.Pages
@@ -28,7 +28,7 @@ namespace Bit.App.Pages
         private PreviousPageInfo _previousPage;
 
         public GroupingsPage(bool mainPage, CipherType? type = null, string folderId = null,
-            string collectionId = null, string pageTitle = null, PreviousPageInfo previousPage = null, 
+            string collectionId = null, string pageTitle = null, PreviousPageInfo previousPage = null,
             bool deleted = false)
         {
             _pageName = string.Concat(nameof(GroupingsPage), "_", DateTime.UtcNow.Ticks);
@@ -109,7 +109,7 @@ namespace Bit.App.Pages
                     {
                         await _vm.LoadAsync();
                     }
-                    catch (Exception e) when(e.Message.Contains("No key."))
+                    catch (Exception e) when (e.Message.Contains("No key."))
                     {
                         await Task.Delay(1000);
                         await _vm.LoadAsync();

@@ -1,20 +1,20 @@
 ﻿using System;
+using System;
+using System.Collections.Generic;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Threading.Tasks;
 using Bit.App.Abstractions;
 using Bit.App.Resources;
 using Bit.App.Utilities;
+using Bit.Core;
 using Bit.Core.Abstractions;
 using Bit.Core.Enums;
 using Bit.Core.Exceptions;
 using Bit.Core.Models.View;
 using Bit.Core.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Bit.Core;
 using Xamarin.Forms;
 
 namespace Bit.App.Pages
@@ -237,7 +237,7 @@ namespace Bit.App.Pages
             set
             {
                 SetProperty(ref _totpLow, value);
-                Page.Resources["textTotp"] =  ThemeManager.Resources()[value ? "text-danger" : "text-default"];
+                Page.Resources["textTotp"] = ThemeManager.Resources()[value ? "text-danger" : "text-default"];
             }
         }
         public bool IsDeleted => Cipher.IsDeleted;
@@ -289,7 +289,7 @@ namespace Bit.App.Pages
 
         public async void TogglePassword()
         {
-            if (! await PromptPasswordAsync())
+            if (!await PromptPasswordAsync())
             {
                 return;
             }
@@ -617,7 +617,7 @@ namespace Bit.App.Pages
             _attachmentData = null;
             _attachmentFilename = null;
         }
-        
+
         private async void CopyAsync(string id, string text = null)
         {
             if (_passwordRepromptService.ProtectedFields.Contains(id) && !await PromptPasswordAsync())

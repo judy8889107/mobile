@@ -1,9 +1,9 @@
-﻿using Bit.Core.Abstractions;
-using Bit.Core.Utilities;
-using Newtonsoft.Json.Linq;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Bit.Core.Abstractions;
+using Bit.Core.Utilities;
+using Newtonsoft.Json.Linq;
 
 namespace Bit.Core.Services
 {

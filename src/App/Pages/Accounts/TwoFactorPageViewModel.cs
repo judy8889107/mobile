@@ -1,17 +1,17 @@
-﻿using Bit.App.Abstractions;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Threading.Tasks;
+using Bit.App.Abstractions;
 using Bit.App.Resources;
+using Bit.App.Utilities;
 using Bit.Core;
 using Bit.Core.Abstractions;
 using Bit.Core.Enums;
 using Bit.Core.Exceptions;
 using Bit.Core.Models.Request;
 using Bit.Core.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Threading.Tasks;
-using Bit.App.Utilities;
 using Newtonsoft.Json;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -49,7 +49,7 @@ namespace Bit.App.Pages
             _environmentService = ServiceContainer.Resolve<IEnvironmentService>("environmentService");
             _messagingService = ServiceContainer.Resolve<IMessagingService>("messagingService");
             _broadcasterService = ServiceContainer.Resolve<IBroadcasterService>("broadcasterService");
-            _stateService = ServiceContainer.Resolve<IStateService>("stateService"); 
+            _stateService = ServiceContainer.Resolve<IStateService>("stateService");
 
             PageTitle = AppResources.TwoStepLogin;
             SubmitCommand = new Command(async () => await SubmitAsync());
@@ -300,7 +300,7 @@ namespace Bit.App.Pages
                 else if (result.ForcePasswordReset)
                 {
                     UpdateTempPasswordAction?.Invoke();
-                } 
+                }
                 else
                 {
                     var disableFavicon = await _storageService.GetAsync<bool?>(Constants.DisableFaviconKey);

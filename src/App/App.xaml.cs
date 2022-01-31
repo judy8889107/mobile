@@ -1,4 +1,7 @@
-﻿using Bit.App.Abstractions;
+﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
+using Bit.App.Abstractions;
 using Bit.App.Models;
 using Bit.App.Pages;
 using Bit.App.Resources;
@@ -7,9 +10,6 @@ using Bit.App.Utilities;
 using Bit.Core;
 using Bit.Core.Abstractions;
 using Bit.Core.Utilities;
-using System;
-using System.Threading;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

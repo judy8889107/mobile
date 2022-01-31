@@ -1,10 +1,10 @@
-﻿using Bit.Core.Abstractions;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Bit.Core.Abstractions;
 using Bit.Core.Enums;
 using Bit.Core.Models.Data;
 using Bit.Core.Models.Domain;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Bit.Core.Services
 {
@@ -185,7 +185,7 @@ namespace Bit.Core.Services
             }
             return new Organization(organizations[id]);
         }
-        
+
         public async Task<Organization> GetOrganizationByIdentifierAsync(string identifier)
         {
             var userId = await GetUserIdAsync();

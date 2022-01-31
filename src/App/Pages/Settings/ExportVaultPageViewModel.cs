@@ -78,7 +78,7 @@ namespace Bit.App.Pages
                 InstructionText = _i18nService.T("ExportVaultMasterPasswordDescription");
                 SecretName = _i18nService.T("MasterPassword");
             }
-            
+
             UpdateWarning();
         }
 
@@ -110,7 +110,7 @@ namespace Bit.App.Pages
         {
             get => _showPassword;
             set => SetProperty(ref _showPassword, value,
-                additionalPropertyNames: new string[] {nameof(ShowPasswordIcon)});
+                additionalPropertyNames: new string[] { nameof(ShowPasswordIcon) });
         }
 
         public bool UseOTPVerification

@@ -1,9 +1,9 @@
-﻿using Bit.Core.Abstractions;
-using Bit.Core.Models.Domain;
-using System;
+﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Bit.Core.Abstractions;
 using Bit.Core.Enums;
+using Bit.Core.Models.Domain;
 
 namespace Bit.Core.Services
 {
@@ -138,7 +138,8 @@ namespace Bit.Core.Services
                 return;
             }
 
-            if (await _keyConnectorService.GetUsesKeyConnector()) {
+            if (await _keyConnectorService.GetUsesKeyConnector())
+            {
                 var pinSet = await IsPinLockSetAsync();
                 var pinLock = (pinSet.Item1 && PinProtectedKey != null) || pinSet.Item2;
 
@@ -172,10 +173,10 @@ namespace Bit.Core.Services
             _messagingService.Send("locked", userInitiated);
             _lockedCallback?.Invoke(userInitiated);
         }
-        
+
         public async Task LogOutAsync()
         {
-            if(_loggedOutCallback != null)
+            if (_loggedOutCallback != null)
             {
                 await _loggedOutCallback.Invoke(false);
             }
@@ -208,10 +209,12 @@ namespace Bit.Core.Services
             await _storageService.RemoveAsync(Constants.ProtectedPin);
         }
 
-        public async Task<int?> GetVaultTimeout() {
+        public async Task<int?> GetVaultTimeout()
+        {
             var vaultTimeout = await _storageService.GetAsync<int?>(Constants.VaultTimeoutKey);
 
-            if (await _policyService.PolicyAppliesToUser(PolicyType.MaximumVaultTimeout)) {
+            if (await _policyService.PolicyAppliesToUser(PolicyType.MaximumVaultTimeout))
+            {
                 var policy = (await _policyService.GetAll(PolicyType.MaximumVaultTimeout)).First();
                 // Remove negative values, and ensure it's smaller than maximum allowed value according to policy
                 var policyTimeout = _policyService.GetPolicyInt(policy, "minutes");
@@ -222,12 +225,14 @@ namespace Bit.Core.Services
 
                 var timeout = vaultTimeout.HasValue ? Math.Min(vaultTimeout.Value, policyTimeout.Value) : policyTimeout.Value;
 
-                if (timeout < 0) {
+                if (timeout < 0)
+                {
                     timeout = policyTimeout.Value;
                 }
 
                 // We really shouldn't need to set the value here, but multiple services relies on this value being correct.
-                if (vaultTimeout != timeout) {
+                if (vaultTimeout != timeout)
+                {
                     await _storageService.SaveAsync(Constants.VaultTimeoutKey, timeout);
                 }
 

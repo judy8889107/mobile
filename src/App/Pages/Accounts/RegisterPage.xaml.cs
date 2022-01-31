@@ -1,7 +1,7 @@
-﻿using Bit.Core.Abstractions;
-using Bit.Core.Utilities;
-using System;
+﻿using System;
 using System.Threading.Tasks;
+using Bit.Core.Abstractions;
+using Bit.Core.Utilities;
 using Xamarin.Forms;
 
 namespace Bit.App.Pages
@@ -61,7 +61,7 @@ namespace Bit.App.Pages
                 await _vm.SubmitAsync();
             }
         }
-        
+
         private async Task RegistrationSuccessAsync(HomePage homePage)
         {
             if (homePage != null)

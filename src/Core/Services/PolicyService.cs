@@ -13,7 +13,7 @@ namespace Bit.Core.Services
     public class PolicyService : IPolicyService
     {
         private const string Keys_PoliciesPrefix = "policies_{0}";
-        
+
         private readonly IStorageService _storageService;
         private readonly IUserService _userService;
 
@@ -26,7 +26,7 @@ namespace Bit.Core.Services
             _storageService = storageService;
             _userService = userService;
         }
-        
+
         public void ClearCache()
         {
             _policyCache = null;

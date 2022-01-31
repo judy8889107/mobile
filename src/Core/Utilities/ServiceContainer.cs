@@ -1,8 +1,8 @@
-﻿using Bit.Core.Abstractions;
-using Bit.Core.Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Bit.Core.Abstractions;
+using Bit.Core.Services;
 
 namespace Bit.Core.Utilities
 {
@@ -11,7 +11,7 @@ namespace Bit.Core.Utilities
         public static Dictionary<string, object> RegisteredServices { get; set; } = new Dictionary<string, object>();
         public static bool Inited { get; set; }
 
-        public static void Init(string customUserAgent = null, string clearCipherCacheKey = null, 
+        public static void Init(string customUserAgent = null, string clearCipherCacheKey = null,
             string[] allClearCipherCacheKeys = null)
         {
             if (Inited)

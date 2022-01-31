@@ -11,7 +11,7 @@ namespace Bit.App.Pages
     {
         private readonly IMessagingService _messagingService;
         private readonly IKeyConnectorService _keyConnectorService;
-        
+
         private NavigationPage _groupingsPage;
         private NavigationPage _sendGroupingsPage;
         private NavigationPage _generatorPage;
@@ -92,7 +92,7 @@ namespace Bit.App.Pages
         {
             CurrentPage = _generatorPage;
         }
-        
+
         public void ResetToSendPage()
         {
             CurrentPage = _sendGroupingsPage;

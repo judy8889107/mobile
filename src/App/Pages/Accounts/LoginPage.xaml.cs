@@ -1,10 +1,10 @@
-﻿using Bit.App.Models;
+﻿using System;
+using System.Threading.Tasks;
+using Bit.App.Models;
 using Bit.App.Resources;
+using Bit.App.Utilities;
 using Bit.Core.Abstractions;
 using Bit.Core.Utilities;
-using System;
-using System.Threading.Tasks;
-using Bit.App.Utilities;
 using Xamarin.Forms;
 
 namespace Bit.App.Pages
@@ -100,7 +100,7 @@ namespace Bit.App.Pages
                 return;
             }
 
-            var selection = await DisplayActionSheet(AppResources.Options, 
+            var selection = await DisplayActionSheet(AppResources.Options,
                 AppResources.Cancel, null, AppResources.GetPasswordHint);
 
             if (selection == AppResources.GetPasswordHint)
@@ -124,7 +124,7 @@ namespace Bit.App.Pages
             var previousPage = await AppHelpers.ClearPreviousPage();
             Application.Current.MainPage = new TabsPage(_appOptions, previousPage);
         }
-        
+
         private async Task UpdateTempPasswordAsync()
         {
             var page = new UpdateTempPasswordPage();

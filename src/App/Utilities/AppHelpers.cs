@@ -1,19 +1,19 @@
 ﻿using System;
-using Bit.App.Abstractions;
-using Bit.App.Pages;
-using Bit.App.Resources;
-using Bit.Core;
-using Bit.Core.Abstractions;
-using Bit.Core.Models.View;
-using Bit.Core.Utilities;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Bit.App.Abstractions;
 using Bit.App.Models;
+using Bit.App.Pages;
+using Bit.App.Resources;
+using Bit.Core;
+using Bit.Core.Abstractions;
 using Bit.Core.Enums;
 using Bit.Core.Exceptions;
+using Bit.Core.Models.View;
+using Bit.Core.Utilities;
 using Newtonsoft.Json;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -221,7 +221,7 @@ namespace Bit.App.Utilities
                 Subject = send.Name
             });
         }
-        
+
         private static string GetSendUrl(SendView send)
         {
             var environmentService = ServiceContainer.Resolve<IEnvironmentService>("environmentService");
@@ -430,12 +430,12 @@ namespace Bit.App.Utilities
         public static async Task<int> IncrementInvalidUnlockAttemptsAsync()
         {
             var storageService = ServiceContainer.Resolve<IStorageService>("storageService");
-            var invalidUnlockAttempts = await storageService.GetAsync<int>(Constants.InvalidUnlockAttempts); 
+            var invalidUnlockAttempts = await storageService.GetAsync<int>(Constants.InvalidUnlockAttempts);
             invalidUnlockAttempts++;
             await storageService.SaveAsync(Constants.InvalidUnlockAttempts, invalidUnlockAttempts);
             return invalidUnlockAttempts;
         }
-        
+
         public static async Task ResetInvalidUnlockAttemptsAsync()
         {
             var storageService = ServiceContainer.Resolve<IStorageService>("storageService");
@@ -445,7 +445,7 @@ namespace Bit.App.Utilities
         public static async Task<bool> IsVaultTimeoutImmediateAsync()
         {
             var storageService = ServiceContainer.Resolve<IStorageService>("storageService");
-            
+
             var vaultTimeoutMinutes = await storageService.GetAsync<int?>(Constants.VaultTimeoutKey);
             if (vaultTimeoutMinutes.GetValueOrDefault(-1) == 0)
             {
