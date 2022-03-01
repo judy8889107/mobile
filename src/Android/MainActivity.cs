@@ -1,4 +1,5 @@
-﻿using System;
+﻿//J: using 引入函式庫(類似#include)
+using System;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -20,12 +21,48 @@ using Bit.Droid.Receivers;
 using Bit.Droid.Utilities;
 using ZXing.Net.Mobile.Android;
 
+/*J: 定義namespace，可以想像成是一個資料夾底下可以有許多資料夾，但每個資料夾名稱都不同。
+ 那namespace 底下還有不同的class，在寫main function時，可以調用不同namespace中class的funcion
+ ※namespace中可以有很多不同的class，存檔時檔名要和class名一致
+ 
+Ex:
+ namespace space1{
+    class space1_class1{...}
+
+ 調用: space1.space1_class1.funcion...
+}
+ 像這份文件就是namespace為 Bit.Droid，class 名就是 MainActivity，檔案名稱 MainActivity.cs
+ */
 namespace Bit.Droid
 {
     // Activity and IntentFilter declarations have been moved to Properties/AndroidManifest.xml
+    /*J: 這裡只是說將Activity和IntentFilter 宣告檔在 src/Android/Properties/AndroidManifest.xml中
+     
+     Intent 和 IntenFilter 粗略介紹: Intent和IntentFilter是Android和一種訊息通訊機制，就好比學校裡的廣播，
+     廣播有時會播放通知，但有時也會播放要執行的動作。Intent訊息機制通常有二種，一個是顯式Intent（Explicit Intent）
+     另一個是隱式Intent（Implicit Intent）
+     顯式Intent : 需要在Intent中明確指定目標元件，也就是在Intent中明確寫明目標元件的名稱（Component name）
+     隱式Intent : 也就是不在Intent中指定目標元件，在Intent中不能含有目標的名字
+    */
+
+
     // They have been hardcoded so we can use the default LaunchMode on Android 11+
+    /*J: 這段話的意思是在AndroidManifest.xml有些參數是直接被寫死的，所以預設執行Android 11+模式 
+      hardcoded - 寫死，意思就是將帶入的參數直接用常數的方式寫在程式碼中
+      Ex:
+      原本:
+      #define pi 3.14
+      cout << pi << endl;
+      變成:
+      cout << 3.14 << endl;
+     */
+
     // LaunchMode defined in values/manifest.xml for Android 10- and values-v30/manifest.xml for Android 11+
+    /*J: 運行模式寫在src/Resources/values/manifest.xml檔裡面
+     */
+
     // See https://github.com/bitwarden/mobile/pull/1673 for details
+
     [Register("com.x8bit.bitwarden.MainActivity")]
     public class MainActivity : Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
